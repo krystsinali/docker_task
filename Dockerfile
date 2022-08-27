@@ -3,16 +3,16 @@ FROM centos:7
 
 RUN yum install git telnet elinks curl wget unzip -y && \
 #below code installs terraform
-curl -O https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip && \
-	unzip terraform_1.0.5_linux_amd64.zip && \
+    curl -O https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip && \
+    unzip terraform_1.0.5_linux_amd64.zip && \
     mv terraform /usr/bin/ && \
 #below code installs packer
     rm -rf /usr/sbin/packer && \
     yum install -y yum-utils && \
     yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
     yum -y install packer
-    #mkdir /tmp/photos && \
-    #touch /tmp/files
+#mkdir /tmp/photos && \
+#touch /tmp/files
     
 #LABEL appname="task"
 #MAINTAINER STUDENT NAME
